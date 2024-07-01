@@ -1,0 +1,299 @@
+/* ----------------------------------------------------------------------
+1. CSS reset
+2. Colors
+3. Typography
+   3.1 Quote
+   3.2 Name
+   3.3 Job title
+4. Layout
+   4.1 Background
+   4.2 Carousel
+       4.2.1 Image
+       4.2.2 Text
+       4.2.3 Carousel buttons      
+---------------------------------------------------------------------- */
+
+/* 1. CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: calc(100vh - 24px);
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        min-height: 100vh;
+    }
+}
+
+button {
+    font-family: inherit;
+}
+
+/* 2. Colors */
+
+:root {
+    --dark: #202047;
+    --light: #B9B9CE;
+    --white: #FFF;
+}
+
+/* 3. Typography */
+
+html {
+    font-size: 16px;
+}
+
+/* 3.1 Quote */
+
+blockquote p {
+    color: var(--dark);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote p {
+        text-align: left;
+        font-size: 2rem;
+        line-height: 2.75rem;
+    }
+}
+
+/* 3.2 Name */
+
+blockquote cite {
+    color: var(--dark);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote cite {
+        text-align: left;
+        font-size: 1.25rem;
+        line-height: 2.375rem;
+    }
+}
+
+/* 3.3 Job title */
+
+blockquote span {
+    color: var(--light);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote span {
+        text-align: left;
+        font-size: 1.25rem;
+        line-height: 2.375rem;
+    }
+}
+
+/* 4. Layout */
+
+/* 4.1 Background */
+
+.carousel-slides {
+    height: calc(100vh - 24px) ; 
+    background-image: url("../assets/pattern-curve.svg");
+    background-repeat: no-repeat;
+    background-size: 76% auto;
+    background-position: left bottom;
+}
+
+@media screen and (min-width: 1200px) {
+    .carousel-slides {
+        height: 100vh;
+        background-size: 42.36% auto;
+    }
+}
+
+/* 4.2 Carousel */
+
+.carousel-slide {
+    width: 87.2%;
+    margin: 24px auto 75px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32.5px;
+}
+
+@media screen and (min-width: 1200px) {
+    .carousel-slide {
+        width: 83.47%;
+        margin: unset;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row-reverse;
+        gap: unset;
+    }
+}
+
+/* 4.2.1 Image */
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 327 / 308;
+    background-image: url("../assets/pattern-bg.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .image-container {
+        width: 57.99%;
+        aspect-ratio: 697 / 657;
+        display: unset;
+    }
+}
+
+.image-portrait {
+    width: 77.67%;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (min-width: 1200px) {
+    .image-portrait {
+        width: 77.47%;
+    }
+}
+
+/* 4.2.2 Text */
+
+blockquote {
+    width: 95.25%;
+    margin-top: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote {
+        width: 52.83%;
+        margin-top: 64px;
+        align-items: flex-start;
+        gap: 32px;
+        position: absolute;
+        left: 0;
+    }
+}
+
+blockquote footer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+    blockquote footer {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+.quotes {
+    position: absolute;
+    top: -25px;
+}
+
+@media screen and (min-width: 1200px) {
+    .quotes {
+        top: -64px;
+        left: 14.96%;
+    }
+}
+
+/* 4.2.3 Carousel buttons */
+
+.carousel-button-container {
+    width: 80px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 20px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 85%;
+}
+
+@media screen and (min-width: 1200px) {
+    .carousel-button-container {
+        width: 112px;
+        height: 56px;
+        padding: 0 20px;
+        border-radius: 28px;
+        top: 87.52%;
+        left: 20%;
+        transform: unset;
+    }
+}
+
+/* Pseudo element needed to set box shadow z-index independent of carousel-button-container z-index */
+.carousel-button-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: -20px -20px 50px 10px var(--light);
+    z-index: -1;
+}
+
+@media screen and (min-width: 1200px) {
+    .carousel-button-container::before {
+        border-radius: 28px;
+    }
+}
+
+.carousel-button {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .carousel-button:hover {
+        cursor: pointer;
+    }
+}
