@@ -114,7 +114,7 @@ blockquote span {
 /* 4.1 Background */
 
 .carousel-slides {
-    height: calc(100vh - 24px) ; 
+    height: 100vh ; 
     background-image: url("../assets/pattern-curve.svg");
     background-repeat: no-repeat;
     background-size: 76% auto;
@@ -123,7 +123,6 @@ blockquote span {
 
 @media screen and (min-width: 1200px) {
     .carousel-slides {
-        height: 100vh;
         background-size: 42.36% auto;
     }
 }
@@ -131,9 +130,12 @@ blockquote span {
 /* 4.2 Carousel */
 
 .carousel-slide {
+    border: 1px solid black;
     width: 87.2%;
     margin: 24px auto 75px auto;
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
