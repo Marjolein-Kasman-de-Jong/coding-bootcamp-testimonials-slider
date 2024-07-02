@@ -114,56 +114,49 @@ blockquote span {
 /* 4.1 Background */
 
 .carousel-slides {
-    height: 100vh ; 
-    background-image: url("../assets/pattern-curve.svg");
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: url("../assets/pattern-curve.svg") no-repeat left bottom;
     background-size: 76% auto;
-    background-position: left bottom;
+    position: relative;
 }
 
 @media screen and (min-width: 1200px) {
     .carousel-slides {
         background-size: 42.36% auto;
+        display: flex;
+        align-items: center;
     }
 }
 
 /* 4.2 Carousel */
 
 .carousel-slide {
-    border: 1px solid black;
-    width: 87.2%;
-    margin: 24px auto 75px auto;
+    width: 100%;
+    margin: 24px 0 75px 0;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 32.5px;
+    transition: .5s ease-in-out;
 }
 
 @media screen and (min-width: 1200px) {
     .carousel-slide {
-        width: 83.47%;
-        margin: unset;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        aspect-ratio: 1440 / 543;
+        margin: 0 auto;
         flex-direction: row-reverse;
-        gap: unset;
     }
 }
 
 /* 4.2.1 Image */
 
 .image-container {
-    width: 100%;
+    width: 87.2%;
     aspect-ratio: 327 / 308;
-    background-image: url("../assets/pattern-bg.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background: url("../assets/pattern-bg.svg") no-repeat center / contain;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -172,16 +165,15 @@ blockquote span {
 
 @media screen and (min-width: 1200px) {
     .image-container {
-        width: 57.99%;
+        width: 48.40%;
         aspect-ratio: 697 / 657;
-        display: unset;
+        margin-right: 73px;
     }
 }
 
 .image-portrait {
     width: 77.67%;
     border-radius: 5px;
-    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -197,7 +189,7 @@ blockquote span {
 /* 4.2.2 Text */
 
 blockquote {
-    width: 95.25%;
+    width: 82.93%;
     margin-top: 25px;
     position: relative;
     display: flex;
@@ -208,12 +200,12 @@ blockquote {
 
 @media screen and (min-width: 1200px) {
     blockquote {
-        width: 52.83%;
+        width: 44.1%;
         margin-top: 64px;
         align-items: flex-start;
         gap: 32px;
         position: absolute;
-        left: 0;
+        left: 165px;
     }
 }
 
@@ -230,12 +222,14 @@ blockquote footer {
 }
 
 .quotes {
+    width: 19.29%;
     position: absolute;
     top: -25px;
 }
 
 @media screen and (min-width: 1200px) {
     .quotes {
+        width: unset;
         top: -64px;
         left: 14.96%;
     }
@@ -264,11 +258,9 @@ blockquote footer {
         border-radius: 28px;
         top: 87.52%;
         left: 20%;
-        transform: unset;
     }
 }
 
-/* Pseudo element needed to set box shadow z-index independent of carousel-button-container z-index */
 .carousel-button-container::before {
     content: '';
     position: absolute;
@@ -298,4 +290,8 @@ blockquote footer {
     .carousel-button:hover {
         cursor: pointer;
     }
+}
+
+.carousel-button:disabled {
+    opacity: .5;
 }
