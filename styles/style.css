@@ -56,7 +56,6 @@ blockquote p {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 1.125rem;
-    font-style: normal;
     font-weight: 300;
     line-height: 1.5rem;
 }
@@ -76,7 +75,6 @@ blockquote cite {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 0.9375rem;
-    font-style: normal;
     font-weight: 700;
     line-height: 1.25rem;
 }
@@ -96,7 +94,6 @@ blockquote span {
     text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 0.9375rem;
-    font-style: normal;
     font-weight: 500;
     line-height: 1.25rem;
 }
@@ -134,7 +131,7 @@ blockquote span {
 
 .carousel-slide {
     width: 100%;
-    margin: 24px 0 75px 0;
+    margin: 24px 0 75px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -229,9 +226,9 @@ blockquote footer {
 
 @media screen and (min-width: 1200px) {
     .quotes {
-        width: unset;
         top: -64px;
         left: 14.96%;
+        width: unset;
     }
 }
 
@@ -293,5 +290,6 @@ blockquote footer {
 }
 
 .carousel-button:disabled {
+    cursor: default;
     opacity: .5;
 }
